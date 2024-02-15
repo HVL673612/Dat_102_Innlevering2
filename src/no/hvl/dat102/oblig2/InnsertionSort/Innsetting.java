@@ -4,7 +4,8 @@ import java.util.Random;
 
 public class Innsetting {
 	
-	public static void insertSortOrginal(Integer[] tabell) {
+	//Byttet til Original fremfor Orginal
+	public static void insertSortOriginal(Integer[] tabell) {
 		int n = tabell.length;
 		
 		for(int i = 1; i < n; i++) {
@@ -18,19 +19,23 @@ public class Innsetting {
 			tabell[j+1]= temp;
 		}
 	}
+	
+	
 	public static void sittMinVerdiPaIndexO(Integer[] tabell) {
 		int n = tabell.length;
 		int minIndex = 0;
 		//finne indexen til minste i tabell
 		for(int i = 1; i < n;i++) {
-			if(tabell[i].compareTo(minIndex)<0) {
+			if(tabell[i].compareTo(tabell[minIndex])<0) { //Endret til tabell[minIndex]
 				minIndex = i;
 			}
 		}
+		//Setter minste verdi forst i tabellen
 		Integer minVerdi = tabell[minIndex];
 		tabell[minIndex] = tabell[0];
 		tabell[0] = minVerdi;
 	}
+	
 	
 	public static void InsertForenklet(Integer[] tabell) {
 		sittMinVerdiPaIndexO(tabell);
@@ -107,7 +112,7 @@ public class Innsetting {
         long startTidStandard = System.nanoTime();
         for (int i = 0; i < antall; i++) {
             Integer[] kopi = a[i].clone();
-            insertSortOrginal(kopi);
+            insertSortOriginal(kopi);
         }
         long sluttTidStandard = System.nanoTime();
 
