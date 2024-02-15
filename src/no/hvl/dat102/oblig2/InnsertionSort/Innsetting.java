@@ -47,7 +47,7 @@ public class Innsetting {
 		}
 	}
 	
-	//forenklet ford, sitter minste verdi på index 0
+	
 	public static void insertToElementerOmGangen(Integer[] tabell) {
         sittMinVerdiPaIndexO(tabell);
         int n = tabell.length;
@@ -92,11 +92,11 @@ public class Innsetting {
 
 	public static void main(String[] args) {
         Random tilfeldig = new Random();
-        int n = 32000; // Størrelsen på datasettet
-        int antall = 10; // Antall ganger hver sortering skal utføres
+        int n = 32000; // størelse
+        int antall = 10; // Antall sorteringer pr sortering
         Integer[][] a = new Integer[antall][n];
 
-        // Generer tilfeldige tall for hvert datasett
+        // number Generator
         for (int i = 0; i < antall; i++) {
             for (int j = 0; j < n; j++) {
                 a[i][j] = tilfeldig.nextInt();
@@ -111,7 +111,7 @@ public class Innsetting {
         }
         long sluttTidStandard = System.nanoTime();
 
-        // Mål tiden for forenklet insertion sort
+        // Mål tiden for oppgave a) insertion sort
         long startTidForenklet = System.nanoTime();
         for (int i = 0; i < antall; i++) {
             Integer[] kopi = a[i].clone();
@@ -119,7 +119,7 @@ public class Innsetting {
         }
         long sluttTidForenklet = System.nanoTime();
 
-        // Mål tiden for optimalisert insertion sort
+        // Mål tiden for oppgave c) insertion sort
         long startTidOptimalisert = System.nanoTime();
         for (int i = 0; i < antall; i++) {
             Integer[] kopi = a[i].clone();
@@ -127,7 +127,7 @@ public class Innsetting {
         }
         long sluttTidOptimalisert = System.nanoTime();
 
-        // Beregn og skriv ut gjennomsnittstidene
+        // Gjenomsnitt
         long gjennomsnittTidStandard = (sluttTidStandard - startTidStandard) / antall;
         long gjennomsnittTidForenklet = (sluttTidForenklet - startTidForenklet) / antall;
         long gjennomsnittTidOptimalisert = (sluttTidOptimalisert - startTidOptimalisert) / antall;
