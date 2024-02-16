@@ -23,7 +23,7 @@ public class Innsetting {
 		int minIndex = 0;
 		//finne indexen til minste i tabell
 		for(int i = 1; i < n;i++) {
-			if(tabell[i].compareTo(minIndex)<0) {
+			if(tabell[i].compareTo(tabell[minIndex])<0) {
 				minIndex = i;
 			}
 		}
@@ -39,7 +39,7 @@ public class Innsetting {
 			Integer temp = tabell[i];
 			int j = i-1;
 			
-			while(j >= 0 &&tabell[j].compareTo(temp)>0) {
+			while(tabell[j].compareTo(temp)>0) {
 				tabell[j+1] = tabell[j];
 				j--;
 			}
@@ -59,7 +59,7 @@ public class Innsetting {
             Integer max = tabell[maxIndex];
 
             int j = i - 1;
-            while (j >= 0 && tabell[j].compareTo(max) > 0) {
+            while (tabell[j].compareTo(max) > 0) {
                 tabell[j + 2] = tabell[j];
                 j -= 2;
             }
@@ -70,7 +70,7 @@ public class Innsetting {
             } else {
                 j = i - 1;
             }
-            while (j >= 0 && tabell[j].compareTo(min) > 0) {
+            while (tabell[j].compareTo(min) > 0) {
                 tabell[j + 1] = tabell[j];
                 j--;
             }
@@ -81,7 +81,7 @@ public class Innsetting {
         if (n % 2 != 0) {
             Integer last = tabell[n - 1];
             int j = n - 2;
-            while (j >= 0 && tabell[j].compareTo(last) > 0) {
+            while (tabell[j].compareTo(last) > 0) {
                 tabell[j + 1] = tabell[j];
                 j--;
             }
@@ -132,8 +132,8 @@ public class Innsetting {
         long gjennomsnittTidForenklet = (sluttTidForenklet - startTidForenklet) / antall;
         long gjennomsnittTidOptimalisert = (sluttTidOptimalisert - startTidOptimalisert) / antall;
 
-        System.out.println("Gjennomsnittlig tid for standard insertion sort: " + gjennomsnittTidStandard + " nanosekunder");
-        System.out.println("Gjennomsnittlig tid for forenklet insertion sort: " + gjennomsnittTidForenklet + " nanosekunder");
-        System.out.println("Gjennomsnittlig tid for optimalisert insertion sort: " + gjennomsnittTidOptimalisert + " nanosekunder");
+        System.out.println("Gjennomsnittlig tid for standard insertion sort: " + gjennomsnittTidStandard/1000000/1000 + " nanosekunder");
+        System.out.println("Gjennomsnittlig tid for forenklet insertion sort: " + gjennomsnittTidForenklet/1000000/1000 + " nanosekunder");
+        System.out.println("Gjennomsnittlig tid for optimalisert insertion sort: " + gjennomsnittTidOptimalisert/1000000/1000 + " nanosekunder");
     }
 }
