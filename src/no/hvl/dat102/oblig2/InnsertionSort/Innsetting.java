@@ -132,8 +132,8 @@ public class Innsetting {
         long gjennomsnittTidForenklet = (sluttTidForenklet - startTidForenklet) / antall;
         long gjennomsnittTidOptimalisert = (sluttTidOptimalisert - startTidOptimalisert) / antall;
 
-        System.out.println("Gjennomsnittlig tid for standard insertion sort: " + gjennomsnittTidStandard/1000000 + " MiliSec");
-        System.out.println("Gjennomsnittlig tid for forenklet insertion sort: " + gjennomsnittTidForenklet/1000000 + " MiliSec");
-        System.out.println("Gjennomsnittlig tid for optimalisert insertion sort: " + gjennomsnittTidOptimalisert/1000000 + " MiliSec");
+        System.out.println("Gjennomsnittlig tid for standard insertion sort: " + gjennomsnittTidStandard+ " NanoSec");
+        System.out.println("Gjennomsnittlig tid for forenklet insertion sort: " + gjennomsnittTidForenklet+ " NanoSec");
+        System.out.println("Gjennomsnittlig tid for optimalisert insertion sort: " + gjennomsnittTidOptimalisert+ " nanoSec");
     }
 }
