@@ -89,11 +89,11 @@ public class Innsetting {
         }
     }
 	
-
+//////////////////////////////////////////////////////////////
 	public static void main(String[] args) {
         Random tilfeldig = new Random();
         int n = 32000; // størelse
-        int antall = 10; // Antall sorteringer pr sortering
+        int antall = 10; // Antall Målinger
         Integer[][] a = new Integer[antall][n];
 
         // number Generator
@@ -132,8 +132,8 @@ public class Innsetting {
         long gjennomsnittTidForenklet = (sluttTidForenklet - startTidForenklet) / antall;
         long gjennomsnittTidOptimalisert = (sluttTidOptimalisert - startTidOptimalisert) / antall;
 
-        System.out.println("Gjennomsnittlig tid for standard insertion sort: " + gjennomsnittTidStandard/1000000/1000 + " nanosekunder");
-        System.out.println("Gjennomsnittlig tid for forenklet insertion sort: " + gjennomsnittTidForenklet/1000000/1000 + " nanosekunder");
-        System.out.println("Gjennomsnittlig tid for optimalisert insertion sort: " + gjennomsnittTidOptimalisert/1000000/1000 + " nanosekunder");
+        System.out.println("Gjennomsnittlig tid for standard insertion sort: " + gjennomsnittTidStandard/1000000 + " MiliSec");
+        System.out.println("Gjennomsnittlig tid for forenklet insertion sort: " + gjennomsnittTidForenklet/1000000 + " MiliSec");
+        System.out.println("Gjennomsnittlig tid for optimalisert insertion sort: " + gjennomsnittTidOptimalisert/1000000 + " MiliSec");
     }
 }
